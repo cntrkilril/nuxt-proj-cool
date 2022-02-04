@@ -5,12 +5,13 @@
 
     <div class="mt-2">
       <div class="" v-if="comments.length === 0">Комментарии прогружаются или их нет</div>
-      <b-card class="mb-2" v-for="comment in comments" :key="comment.id" bg-variant="dark" text-variant="white" :title="comment.email">
+      <b-card class="mb-2" v-for="comment in comments" v-if="comments.length !== 2" :key="comment.id" bg-variant="dark" text-variant="white" :title="comment.email">
         <b-card-text>
           {{ comment.body }}
         </b-card-text>
       </b-card>
     </div>
+
     <b-form @submit="Submit" @reset="Reset" v-if="show">
       <b-form-group
         id="input-group-1"
