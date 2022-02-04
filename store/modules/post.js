@@ -1,7 +1,7 @@
 export default {
   actions: {
     async fetchPosts(ctx) {
-      const res = await fetch('https://demo-api.vsdev.space/api/articles', {
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'GET',
       })
       const posts = await res.json()
